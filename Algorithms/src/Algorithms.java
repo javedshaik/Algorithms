@@ -49,7 +49,7 @@ public class Algorithms {
 	}
 
 	public static void insertionSort(int[] arr) {
-		int temp;
+		int temp=0;
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = i; j > 0; j--) {
 				if (arr[j] < arr[j - 1]) {
