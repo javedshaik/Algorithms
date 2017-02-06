@@ -27,6 +27,7 @@ public class Algorithms {
 		}
 		bubbleSort(arr);
 		insertionSort(arr);
+		selectionSort(arr);
 	}
 
 	public static void bubbleSort(int[] arr) {
@@ -49,7 +50,7 @@ public class Algorithms {
 	}
 
 	public static void insertionSort(int[] arr) {
-		int temp=0;
+		int temp;
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = i; j > 0; j--) {
 				if (arr[j] < arr[j - 1]) {
@@ -58,6 +59,25 @@ public class Algorithms {
 					arr[j - 1] = temp;
 				}
 			}
+		}
+		System.out.println(Arrays.toString(arr));
+	}
+
+	public static void selectionSort(int[] arr) {
+		int temp;
+		for (int i = 0; i < arr.length - 1; i++) {
+			temp = i;
+			for (int j = i + 1; j < arr.length; j++) {
+				if (arr[j] < arr[temp]) {
+					temp = j;
+
+					int smallNum = arr[temp];
+					arr[temp] = arr[i];
+					arr[i] = smallNum;
+
+				}
+			}
+
 		}
 		System.out.println(Arrays.toString(arr));
 	}
